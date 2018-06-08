@@ -4,9 +4,7 @@
   "description": "Unofficial JavaScript library for nano",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --config webpack.dev.js && webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -18,12 +16,12 @@
     "url": "https://github.com/avihai-developer/nano.lib.js/issues"
   },
   "homepage": "https://github.com/avihai-developer/nano.lib.js#readme",
-  "dependencies": {
-  },
   "devDependencies": {
     "ts-loader": "^4.4.0",
-    "webpack-cli": "^3.0.3",
     "typescript": "^2.9.1",
-    "webpack": "^4.12.0"
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.3",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.2"
   }
 }
