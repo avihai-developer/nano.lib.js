@@ -9,7 +9,7 @@ module.exports = merge(common, {
 		minimize: false
 	},
 	output: {
-		library: 'nanoLib',
+		library: 'NanoLib',
 		filename: 'nano-lib.js',
 		path: path.resolve(__dirname, 'dist')
 	}

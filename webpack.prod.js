@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = merge(common, {
 	mode: 'production',
 	output: {
-		library: 'nanoLib',
+		library: 'NanoLib',
 		filename: 'nano-lib.min.js',
 		path: path.resolve(__dirname, 'dist')
 	}
