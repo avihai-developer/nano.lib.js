@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/avihai-developer/nano.lib.js#readme",
   "devDependencies": {
+    "crypto-browserify": "^3.12.0",
     "ts-loader": "^4.4.0",
     "typescript": "^2.9.1",
     "webpack": "^4.12.0",
