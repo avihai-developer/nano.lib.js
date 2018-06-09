@@ -1,5 +1,5 @@
 {
-  "name": "nano.lib.js",
+  "name": "nano.protocol.lib.js",
   "version": "1.0.0",
   "description": "Unofficial JavaScript library for nano",
   "main": "index.js",

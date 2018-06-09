@@ -11,10 +11,7 @@ Unofficial JavaScript library for nano
  
  # How to install:
  	NPM:
- 	npm i nano.lib.js --save
- 	
- 	Bower:
- 	Soon
+ 	npm i nano.protocol.lib.js --save
  	
  	Manual:
  	Just load the files:
