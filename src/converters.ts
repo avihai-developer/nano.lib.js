@@ -55,15 +55,50 @@ export class Converters {
         return hex;
     }
 
-    static uint832ToUuint864(array: Uint8Array): Uint8Array {
-        let newUuint864 = new Uint8Array(64);
-        for (let i=0; i<32; i++) {
-            newUuint864[i] = array[i];
-        }
-        for (let i=32; i<64; i++) {
-            newUuint864[i] = array[i - 32];
-        }
-        return newUuint864;
+    static uint4ToUint8(uint4: any) {
+        var length = uint4.length / 2;
+        var uint8 = new Uint8Array(length);
+        for (let i = 0; i < length; i++)	uint8[i] = uint4[i*2] * 16 + uint4[i*2+1];
+        return uint8;
     }
 
+    static hexToUint4(hex: any) {
+        var length = hex.length;
+        var uint4 = new Uint8Array(length);
+        for (let i = 0; i < length; i++) uint4[i] = parseInt(hex.substr(i, 1), 16);
+        return uint4;
+    }
+
+    static uint5ToString(uint5: any) {
+        var letter_list = '13456789abcdefghijkmnopqrstuwxyz'.split('');
+        var string = "";
+        for (let i = 0; i < uint5.length; i++)	string += letter_list[uint5[i]];
+        return string;
+    }
+
+    static uint4ToUint5(uint4: any) {
+        var length = uint4.length / 5 * 4;
+        var uint5 = new Uint8Array(length);
+        for (let i = 1; i <= length; i++) {
+            let n = i - 1;
+            let m = i % 4;
+            let z = n + ((i - m)/4);
+            let right = uint4[z] << m;
+            let left;
+            if (((length - i) % 4) == 0)	left = uint4[z-1] << 4;
+            else	left = uint4[z+1] >> (4 - m);
+            uint5[n] = (left + right) % 32;
+        }
+        return uint5;
+    }
+
+    static uint8ToUint4(uint8: any) {
+        var length = uint8.length;
+        var uint4 = new Uint8Array(length*2);
+        for (let i = 0; i < length; i++) {
+            uint4[i*2] = uint8[i] / 16 | 0;
+            uint4[i*2+1] = uint8[i] % 16;
+        }
+        return uint4;
+    }
 }

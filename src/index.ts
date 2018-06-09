@@ -1,5 +1,6 @@
 import * as cryptoBrowserify from "../node_modules/crypto-browserify/index";
 import * as blake from "../node_modules/blakejs/index";
+import * as nacl from "./libs/nacl";
 import {Converters} from "./converters"
 
 export class NanoLib {
@@ -32,16 +33,24 @@ export class NanoLib {
         blake.blake2bUpdate(context, seedUint8);
         blake.blake2bUpdate(context, indexUnit8);
         privateKeyUnit8 = blake.blake2bFinal(context);
-        const privateKry = Converters.uint8ToHex(privateKeyUnit8);
-        return privateKry;
+        const privateKey = Converters.uint8ToHex(privateKeyUnit8);
+        return privateKey;
     }
 
     static getPublicKey(privateKey: string): string {
         let privateKeyUnit8 = Converters.hexToUint8(privateKey);
-        return '';
+        let newNacl: any;
+        newNacl = nacl;
+        let publicKeyUnit8 = newNacl.sign.keyPair.fromSecretKey(privateKeyUnit8);
+        const publicKey = Converters.uint8ToHex(publicKeyUnit8);
+        return publicKey;
     }
 
     static getAccount(publicKey: string): string {
-        return '';
+        var key_bytes = Converters.uint4ToUint8( Converters.hexToUint4 (publicKey) );
+        var checksum = Converters.uint5ToString( Converters.uint4ToUint5( Converters.uint8ToUint4( blake.blake2b(key_bytes, null, 5).reverse() ) ) );
+        var c_account = Converters.uint5ToString( Converters.uint4ToUint5( Converters.hexToUint4 ('0'+publicKey) ) );
+        let account = 'nano_' + c_account + checksum;
+        return account;
     }
 }
