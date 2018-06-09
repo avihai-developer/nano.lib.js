@@ -8,5 +8,7 @@ html(lang="en")
 		script(src='nano-lib.js')
 	body
 		h1 1111111
-		script NanoLib = NanoLib.NanoLib;
-		script console.log(NanoLib.generateNewSeed());
+		script.
+			NanoLib = NanoLib.NanoLib;
+			var user = NanoLib.generateNewUser();
+			console.log('user: ',user);
