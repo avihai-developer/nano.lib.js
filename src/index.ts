@@ -17,13 +17,14 @@ export class NanoLib {
 
     static generateNewSeed(): string {
         let seed = "";
-        while (seed.length < 64) {
-            var uint8Array = cryptoBrowserify.randomBytes(1);
-            var char = uint8Array[0].toString(16).toUpperCase();
-            if (char.length > 1) {
-                seed = seed + char;
+        let uint8Array = cryptoBrowserify.randomBytes(32);
+        uint8Array.forEach((item: number) => {
+            let chars = item.toString(16).toUpperCase();
+            if(chars.length === 1) {
+                chars = "0" + chars;
             }
-        }
+            seed = seed + chars;
+        });
         return seed;
     }
 
