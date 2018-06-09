@@ -9,26 +9,41 @@ Unofficial JavaScript library for nano
  - ( Public ) **Public Key** - The Public Key is non encoded Account (Nano address). 
  - ( Public ) **Account (Nano address)** - The Account (Nano address) is encoded public key that we use to receive transactions.
  
+ # How to install:
+ 	NPM:
+ 	npm i nano.lib.js --save
+ 	
+ 	Bower:
+ 	Soon
+ 	
+ 	Manual:
+ 	Just load the files:
+ 	For development: /dist/nano-lib.js
+	For production: /dist/nano-lib.min.js
+ 	
+ # Let's start
+ 	// Just do it for now i will fix this latter xD
+ 	NanoLib = NanoLib.NanoLib;
  # Generate new seed
 	var newSeed = NanoLib.generateNewSeed(); 
 	
 	Response:
-	4E292D9AF213F8C741CADBB26C1DE4625CA5A53BC94B4F681B712C3E1F7BB36D
+	BAEAF110C9F7FB41149DE23F92797EFFB39A8CCCDB8183A1A72F489687820BA4
  # Get private key from seed
- 	var seed = "4E292D9AF213F8C741CADBB26C1DE4625CA5A53BC94B4F681B712C3E1F7BB36D";
+ 	var seed = "BAEAF110C9F7FB41149DE23F92797EFFB39A8CCCDB8183A1A72F489687820BA4";
  	var index = 0;
 	var privateKey = NanoLib.getPrivateKey(seed, index);
 	
 	Response:
-	B7C7ACFEF56B2195606AD160769472FD3BDA2A16462DE2F6AF0AA70AC0419DE4
+	FE15C9B87319CEC8AA27C9B9850380B707D3E3DB8A48FE1BED54CCC868EF186B
  # Get public key from private key
- 	var privateKey = "B7C7ACFEF56B2195606AD160769472FD3BDA2A16462DE2F6AF0AA70AC0419DE4";
+ 	var privateKey = "FE15C9B87319CEC8AA27C9B9850380B707D3E3DB8A48FE1BED54CCC868EF186B";
 	var publicKey = NanoLib.getPublicKey(privateKey); 
 	
 	Response:
-	7DD3C47166E1BE758CA4D9C445F7007CF8CAC9122F6B48326919506FE0270AAB
+	3A9514E081FFAB73B7727FC00CE5DE96AFEF3E253836552A7F8CD5EFF7BD838B
  # Get Account (Nano address) from public key
- 	var publicKey = "7DD3C47166E1BE758CA4D9C445F7007CF8CAC9122F6B48326919506FE0270AAB";
+ 	var publicKey = "3A9514E081FFAB73B7727FC00CE5DE96AFEF3E253836552A7F8CD5EFF7BD838B";
 	var account = NanoLib.getAccount(publicKey);
 	
 	Response:
@@ -38,8 +53,8 @@ Unofficial JavaScript library for nano
  	
  	Response:
 	{
-		seed: "4E292D9AF213F8C741CADBB26C1DE4625CA5A53BC94B4F681B712C3E1F7BB36D",
-		privateKey: "B7C7ACFEF56B2195606AD160769472FD3BDA2A16462DE2F6AF0AA70AC0419DE4",
-		publicKey: "7DD3C47166E1BE758CA4D9C445F7007CF8CAC9122F6B48326919506FE0270AAB",
-		account: "nano_1gy7s4tzsg96bncc9j3css8mon7smrs3b35pgcoedm8gnes4t8gibh5m8ips"
+		seed: "BAEAF110C9F7FB41149DE23F92797EFFB39A8CCCDB8183A1A72F489687820BA4",
+		privateKey: "FE15C9B87319CEC8AA27C9B9850380B707D3E3DB8A48FE1BED54CCC868EF186B",
+		publicKey: "3A9514E081FFAB73B7727FC00CE5DE96AFEF3E253836552A7F8CD5EFF7BD838B",
+		account: "nano_1gno4mia5zxdgguq6zy13mkxx7ohxwz4cg3pcno9z58oxzuuu1wdunigig95"
 	}
