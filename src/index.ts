@@ -2,7 +2,7 @@ import * as cryptoBrowserify from "../node_modules/crypto-browserify/index";
 
 export class NanoLib {
 
-    static generateNewUser() {
+    static generateNewUser(): object {
         let seed = this.generateNewSeed();
         let privateKey = this.getPrivateKey(seed, 0);
         let publicKey = this.getPublicKey(privateKey);
