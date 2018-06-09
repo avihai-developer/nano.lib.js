@@ -1,5 +1,5 @@
 
-# nano.lib.js  
+# nano.protocol.lib.js
 Unofficial JavaScript library for nano  
   
 # Terms  
