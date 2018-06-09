@@ -44,7 +44,7 @@ Unofficial JavaScript library for nano
 	var account = NanoLib.getAccount(publicKey);
 	
 	Response:
-	xrb_1gy7s4tzsg96bncc9j3css8mon7smrs3b35pgcoedm8gnes4t8gibh5m8ips
+	nano_1gno4mia5zxdgguq6zy13mkxx7ohxwz4cg3pcno9z58oxzuuu1wdunigig95
  # You can also create all this in one function:
  	var user = NanoLib.generateNewUser();
  	
