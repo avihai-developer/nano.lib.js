@@ -1,10 +1,10 @@
 export class NanoLib {
 
-    generateNewUser() {
-        let seed = this.generateNewSeed();
-        let privateKey = this.getPrivateKey(seed, 0);
-        let publicKey = this.getPublicKey(privateKey);
-        let account = this.getAccount(publicKey);
+    static generateNewUser() {
+        let seed = NanoLib.generateNewSeed();
+        let privateKey = NanoLib.getPrivateKey(seed, 0);
+        let publicKey = NanoLib.getPublicKey(privateKey);
+        let account = NanoLib.getAccount(publicKey);
         return {
             seed: seed,
             privateKey: privateKey,
@@ -13,19 +13,19 @@ export class NanoLib {
         }
     }
 
-    generateNewSeed(): string {
+    static generateNewSeed(): string {
         return '';
     }
 
-    getPrivateKey(seed: string, index: number): string {
+    static getPrivateKey(seed: string, index: number): string {
         return '';
     }
 
-    getPublicKey(privateKey: string): string {
+    static getPublicKey(privateKey: string): string {
         return '';
     }
 
-    getAccount(publicKey: string): string {
+    static getAccount(publicKey: string): string {
         return '';
     }
 }
