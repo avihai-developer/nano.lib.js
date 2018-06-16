@@ -1,8 +1,8 @@
 {
   "name": "nano.protocol.lib.js",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "Unofficial JavaScript library for nano",
-  "main": "index.js",
+  "main": "dist/nano-lib.min.js",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.dev.js && webpack --config webpack.prod.js"
