@@ -1,6 +1,7 @@
 import * as cryptoBrowserify from "../node_modules/crypto-browserify/index";
 import * as blake from "../node_modules/blakejs/index";
 import * as nacl from "./libs/nacl";
+import * as crypto from "crypto";
 import {Converters} from "./converters"
 
 export class NanoLib {
@@ -20,7 +21,12 @@ export class NanoLib {
 
     static generateNewSeed(): string {
         let seed;
-        let uint8Array = cryptoBrowserify.randomBytes(32);
+        let uint8Array;
+        if (window) {
+            uint8Array = cryptoBrowserify.randomBytes(32);
+        } else {
+            uint8Array = crypto.randomBytes(32);
+        }
         seed = Converters.uint8ToHex(uint8Array);
         return seed;
     }

@@ -1,6 +1,6 @@
 export class Converters {
 
-    static uint8ToHex(unit8Array: number[]): string {
+    static uint8ToHex(unit8Array: any): string {
         let hex = '';
         for (let i = 0; i < unit8Array.length; i++) {
             let aux;
