@@ -4,7 +4,7 @@ import * as blake from "../node_modules/blakejs/index";
 import * as nacl from "./libs/nacl";
 import {Converters} from "./converters"
 
-export class NanoLib {
+export default class NanoLib {
 
     static generateNewUser(): object {
         let seed = this.generateNewSeed();
@@ -53,9 +53,9 @@ export class NanoLib {
     }
 
     static getAccount(publicKey: string): string {
-        var key_bytes = Converters.uint4ToUint8( Converters.hexToUint4 (publicKey) );
-        var checksum = Converters.uint5ToString( Converters.uint4ToUint5( Converters.uint8ToUint4( blake.blake2b(key_bytes, null, 5).reverse() ) ) );
-        var c_account = Converters.uint5ToString( Converters.uint4ToUint5( Converters.hexToUint4 ('0'+publicKey) ) );
+        var key_bytes = Converters.uint4ToUint8(Converters.hexToUint4(publicKey));
+        var checksum = Converters.uint5ToString(Converters.uint4ToUint5(Converters.uint8ToUint4(blake.blake2b(key_bytes, null, 5).reverse())));
+        var c_account = Converters.uint5ToString(Converters.uint4ToUint5(Converters.hexToUint4('0' + publicKey)));
         let account = 'nano_' + c_account + checksum;
         return account;
     }

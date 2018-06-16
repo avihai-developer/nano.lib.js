@@ -17,10 +17,6 @@ Unofficial JavaScript library for nano
  	Just load the files:
  	For development: /dist/nano-lib.js
 	For production: /dist/nano-lib.min.js
- 	
- # Let's start
- 	// Just do it for now i will fix this latter xD
- 	NanoLib = NanoLib.NanoLib;
  # Generate new seed
 	var newSeed = NanoLib.generateNewSeed(); 
 	
