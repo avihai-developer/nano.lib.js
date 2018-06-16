@@ -11,6 +11,7 @@ module.exports = merge(common, {
 	},
 	output: {
 		library: 'NanoLib',
+		libraryTarget: 'umd',
 		filename: 'nano-lib.js',
 		path: path.resolve(__dirname, 'dist')
 	},
