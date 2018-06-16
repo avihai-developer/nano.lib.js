@@ -1,6 +1,6 @@
 {
   "name": "nano.protocol.lib.js",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Unofficial JavaScript library for nano",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,9 @@
     "webpack-dev-server": "^3.1.4",
     "webpack-merge": "^4.1.2",
     "blakejs": "^1.1.0",
-    "tweetnacl": "^1.0.0",
+    "tweetnacl": "^1.0.0"
+  },
+  "dependencies": {
     "@types/node": "^10.3.3"
   }
 }

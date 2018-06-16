@@ -2,6 +2,9 @@ const path = require('path');
 
 module.exports = {
 	entry: './src/index.ts',
+	externals: {
+		'crypto': 'crypto'
+	},
 	module: {
 		rules: [
 			{

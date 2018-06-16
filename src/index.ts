@@ -1,7 +1,7 @@
 import * as cryptoBrowserify from "../node_modules/crypto-browserify/index";
+import * as cryptoNpm from "crypto";
 import * as blake from "../node_modules/blakejs/index";
 import * as nacl from "./libs/nacl";
-import * as crypto from "crypto";
 import {Converters} from "./converters"
 
 export class NanoLib {
@@ -23,7 +23,7 @@ export class NanoLib {
         let seed;
         let uint8Array;
         if (typeof window === "undefined") {
-            uint8Array = crypto.randomBytes(32);
+            uint8Array = cryptoNpm.randomBytes(32);
         } else {
             uint8Array = cryptoBrowserify.randomBytes(32);
         }
