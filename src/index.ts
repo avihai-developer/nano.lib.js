@@ -22,10 +22,10 @@ export class NanoLib {
     static generateNewSeed(): string {
         let seed;
         let uint8Array;
-        if (window) {
-            uint8Array = cryptoBrowserify.randomBytes(32);
-        } else {
+        if (typeof window === "undefined") {
             uint8Array = crypto.randomBytes(32);
+        } else {
+            uint8Array = cryptoBrowserify.randomBytes(32);
         }
         seed = Converters.uint8ToHex(uint8Array);
         return seed;
